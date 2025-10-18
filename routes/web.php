@@ -3,10 +3,24 @@
 use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\AsistenController;
 use App\Http\Controllers\DosenController;
+use App\Models\Asisten;
+use App\Models\Dosen;
+use App\Models\Matkul;
+use App\Models\MatkulKelas;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('dashboard');
+    $jumlahMatkul = Matkul::count();
+    $jumlahAsisten = Asisten::count();
+    $jumlahDosen = Dosen::count();
+    $jumlahMatkulKelas = MatkulKelas::count();
+
+    return view('dashboard', compact(
+        'jumlahMatkul',
+        'jumlahAsisten',
+        'jumlahDosen',
+        'jumlahMatkulKelas'
+    ));
 })->name('dashboard');
 
 Route::controller(AsistenController::class)->group(function () {
