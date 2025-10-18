@@ -9,10 +9,6 @@ Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/kelola-matkul', function () {
-    return view('matkul.index');
-})->name('kelolamatkul');
-
 Route::controller(AsistenController::class)->group(function () {
     Route::get('/kelola-asisten', 'index')->name('kelolaasisten');
     Route::get('/kelola-asisten/tambah', 'create')->name('asisten.tambah');
