@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="id">
   <head>
     <meta charset="utf-8" />
@@ -19,13 +18,27 @@
       </div>
 
       <!-- Menu desktop -->
-      <div class="hidden md:flex space-x-4">
+      <div class="hidden md:flex space-x-4 items-center">
         <a href="{{ route('dashboard') }}" class="hover:bg-blue-600 px-3 py-2 rounded">Dashboard</a>
         <a href="{{ route('kelolaasisten') }}" class="hover:bg-blue-600 px-3 py-2 rounded">Kelola Asisten</a>
         <a href="{{ route('keloladosen') }}" class="hover:bg-blue-600 px-3 py-2 rounded">Kelola Dosen</a>
         <a href="{{ route('kelolamatkul') }}" class="hover:bg-blue-600 px-3 py-2 rounded">Kelola Matkul</a>
         <a href="{{ route('matkulkelas.index') }}" class="hover:bg-blue-600 px-3 py-2 rounded">Matkul Kelas</a>
         <a href="{{ route('absen.index') }}" class="hover:bg-blue-600 px-3 py-2 rounded">Kelola Absen</a>
+
+        <!-- Tombol Logout -->
+        <!-- Tombol Logout (Desktop) -->
+        <form action="{{ route('logout') }}" method="POST" class="inline">
+          @csrf
+          <button type="submit"
+            class="flex items-center gap-2 text-white hover:text-rose-600 px-4 py-2 rounded-lg shadow-sm font-medium transition duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h4a2 2 0 012 2v1" />
+            </svg>
+            Logout
+          </button>
+        </form>
+
       </div>
 
       <!-- Tombol hamburger (mobile) -->
@@ -38,7 +51,7 @@
   </div>
 </nav>
 
-<!-- Sidebar (muncul di mobile) -->
+<!-- Sidebar (mobile) -->
 <aside 
   class="fixed inset-y-0 left-0 w-64 bg-blue-700 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden"
   :class="open ? 'translate-x-0' : '-translate-x-full'"
@@ -51,6 +64,20 @@
     <a href="{{ route('kelolamatkul') }}" class="block px-4 py-2 rounded hover:bg-blue-600">Kelola Matkul</a>
     <a href="{{ route('matkulkelas.index') }}" class="block px-4 py-2 rounded hover:bg-blue-600">Matkul Kelas</a>
     <a href="{{ route('absen.index') }}" class="block px-4 py-2 rounded hover:bg-blue-600">Kelola Absen</a>
+
+    <!-- Tombol Logout (mobile) -->
+    <!-- Tombol Logout (Desktop) -->
+<form action="{{ route('logout') }}" method="POST" class="inline">
+  @csrf
+  <button type="submit"
+    class="flex items-center gap-2 text-white hover:text-rose-600 px-4 py-2 rounded-lg shadow-sm font-medium transition duration-200">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h4a2 2 0 012 2v1" />
+    </svg>
+    Logout
+  </button>
+</form>
+
   </nav>
 </aside>
 
@@ -77,5 +104,3 @@
 
   </body>
 </html>
-
-
