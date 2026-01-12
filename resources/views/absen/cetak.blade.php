@@ -52,7 +52,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>Dosen<br>{{ $matkulKelas->dosen->nama_dosen }}</td>
+                <td>Dosen<br></td>
                 @foreach ($tanggalKuliah as $tgl)
                     <td></td>
                 @endforeach
