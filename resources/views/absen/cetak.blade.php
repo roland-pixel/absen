@@ -28,7 +28,7 @@
         </tr>
         <tr>
             <td @class(['no-border'])>Dosen</td>
-            <td @class(['no-border'])>: {{ $matkulKelas->dosen->nama_dosen }}</td>
+            <td @class(['no-border'])>: </td>
             <td @class(['no-border'])>Kelas</td>
             <td @class(['no-border'])>: {{ $matkulKelas->kelas->nama_kelas }}</td>
         </tr>
@@ -85,7 +85,7 @@
 
     <div style="margin-top:40px; text-align:right;">
         <p>Kepala {{ $matkulKelas->lab }}</p><br><br>
-        <p><strong>Herman Rizani, S.Kom.</strong><br>NIK 01.1109.044</p>
+        <p><strong>Firdaus, S.Kom.</strong><br>NIK 01.1109.044</p>
     </div>
 
 </body>
